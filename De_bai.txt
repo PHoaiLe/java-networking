@@ -1,0 +1,64 @@
+Viết chương trình giám sát sự thay đổi của một thư mục trên các máy tính từ xa. 
+Sinh viên cần viết hai chương trình, 
+một chương trình client chạy tại các máy cần giám sát, 
+một chương trình server chạy tại máy giám sát.
+
+-	Chương trình Client: kết nối và trao đổi thông tin với server.
+-	Chương trình Server:
+o	Quản lý danh sách các client. 
+o	Chọn client cần giám sát, chọn thư mục trên máy client cần giám sát. 
+	Mọi thay đổi trên thư mục này 
+	(xóa/thêm các thư mục con, xóa/thêm/chỉnh sửa nội dung các tập tin bên trong thư mục) 
+	chương trình cần phải thông báo cho người dùng (tại server). 
+o	Có thể giám sát cùng lúc nhiều client (mỗi client chỉ giám sát một thư mục)
+o	Giao diện đồ họa.
+
+
+
+
+
+
+
+
+
+
+
+					<<Quá trình demo>>
+
+<>Kết nối server:
+  -server mở:
+   o.client nhập localhost
+   o.client nhập địa chỉ IP qua Internet
+   o.client nhập địa chỉ sai
+
+  -server đóng:
+   o.client nhập địa chỉ đúng/sai
+
+<>Hiển thị và quản lý danh sách clients
+
+<>Chọn client giám sát -> hiển thị ra danh sách thư mục có thể chọn của máy client
+  -Chưa chọn client và bấm bất kỳ nút nào
+  -Chọn một client cụ thể và bấm lần lượt các nút
+  -Chọn một thư mục và tiến, lùi
+  -Chọn thư mục để theo dõi -> thực hiện các thay đổi (thêm, xóa, sửa các tập tin con/nội dung tập tin)
+   -> Hiển thị ký hiệu thông báo client đang được theo dõi
+   -> Hiển thị ký kiệu thông báo client có thay đổi bất kỳ ở thư mục được server theo dõi
+   -> Hiển thị lịch sử khi bấm vào xem
+   -> Cây thư mục được cập nhật (đối với trường hợp thêm/xóa/đổi tên tập tin con bên trong)
+  -Trong quá trình theo dõi, server có thể tiếp tục di chuyển trong cây thư mục
+  -Server có thể theo dõi nhiều hơn 1 thư mục của một client nếu muốn -> lấy ví dụ
+
+<>Thông tin các client được cập nhật ngầm và chỉ hiển thị khi được chọn
+  -> theo dõi client khác và thử thay đổi -> thông báo thay đổi có hiển thị hay không?
+
+<>Dừng theo dõi một client (dừng hẳn các tiến trình đang theo dõi trên client đó)
+  ->Client có được bỏ đánh dấu hay không?
+
+<>Sau khi dừng theo dõi, có thể tiếp tục theo dõi hay không?
+
+<>Ngắt kết nối:
+  -Client không bị theo dõi ngắt kết nối đúng quy định - bấm nút "Disconnect to server"
+  -Client không bị theo dõi ngắt kết nối đột ngột - bấm tắt cửa sổ màn hình
+  -Client đang bị theo dõi ngắt kết nối
+  -Server bị ngắt -> Các client đang kết nối có bị ngắt hay không?
+
